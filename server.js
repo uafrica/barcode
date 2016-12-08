@@ -4,6 +4,8 @@
 var http   = require('http');
 var bwipjs = require('bwip-js');
 
+var port = process.env.BARCODE_PORT || 3030;
+
 http.createServer(function (req, res) {
   // If the url does not begin /?bcid= then 404.  Otherwise, we end up
   // returning 400 on requests like favicon.ico.
@@ -13,6 +15,6 @@ http.createServer(function (req, res) {
   } else {
     bwipjs(req, res);
   }
-}).listen(3030)
+}).listen(port)
 
-console.log('Running barcode service on port 3030');
+console.log('Running barcode service on port ' + port);
