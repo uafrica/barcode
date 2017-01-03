@@ -9,7 +9,10 @@ var port = process.env.BARCODE_PORT || 3030;
 http.createServer(function (req, res) {
   // If the url does not begin /?bcid= then 404.  Otherwise, we end up
   // returning 400 on requests like favicon.ico.
-  if (req.url.indexOf('/?bcid=') != 0) {
+  if (req.url == '/ping') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('PONG', 'utf8');
+  } else if (req.url.indexOf('/?bcid=') != 0) {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
     res.end('BWIP-JS: Unknown request format.', 'utf8');
   } else {
