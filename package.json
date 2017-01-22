@@ -1,6 +1,6 @@
 {
   "name": "barcode",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Wrapper service for the bwip-js barcode generation library",
   "repository": "uafrica/barcode",
   "main": "server.js",
