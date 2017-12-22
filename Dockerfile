@@ -1,5 +1,5 @@
 # https://github.com/mhart/alpine-node/
-FROM mhart/alpine-node:6.4.0
+FROM mhart/alpine-node:8.9.3
 
 COPY . /src
 
